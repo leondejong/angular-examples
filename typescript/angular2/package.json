@@ -1,0 +1,37 @@
+{
+  "name": "angular2-typescript-examples",
+  "version": "0.0.1",
+  "description": "Angular2 Typescript Examples",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/leondejong/angular-examples.git"
+  },
+  "scripts": {
+    "compile-button-component": "tsc",
+    "test-button-component": "karma start karma.conf.js"
+  },
+  "keywords": [
+    "angular2",
+    "typescript",
+    "examples"
+  ],
+  "author": "Léon de Jong",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "angular2": "2.0.0-beta.0",
+    "es6-promise": "3.0.2",
+    "es6-shim": "0.33.3",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.0",
+    "systemjs": "0.19.6",
+    "zone.js": "0.5.10"
+  },
+  "devDependencies": {
+    "jasmine": "^2.4.1",
+    "karma": "^0.13.16",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.6",
+    "typescript": "^1.7.5"
+  }
+}

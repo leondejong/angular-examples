@@ -1,0 +1,98 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext);
+
+$primary-colors: (
+	red: rgba(255, 32, 0, 1),
+	yellow: rgba(255, 208, 0, 1),
+	green: rgba(32, 192, 0, 1),
+	blue: rgba(48, 0, 192, 1)
+);
+
+$padding: .5rem 1rem .5rem 1rem;
+$border-width: .125rem;
+$border-radius: .25rem;
+$background-color: rgba(32, 32, 32, 1);
+$color: rgba(255, 255, 255, 1);
+
+@mixin button-states($background-color: $background-color, $color: $color, $modifiers: (10% 20% 30%)) {
+	&:hover {
+		cursor: pointer;
+		color: $color;
+		background-color: lighten($background-color, nth($modifiers, 1));
+		border-color: lighten($background-color, nth($modifiers, 1));
+	}
+	&:active, &:focus, &.active, &.focus {
+		color: $color;
+		background-color: lighten($background-color, nth($modifiers, 2));
+		border-color: lighten($background-color, nth($modifiers, 2));
+		&:hover {
+			color: $color;
+			background-color: lighten($background-color, nth($modifiers, 3));
+			border-color: lighten($background-color, nth($modifiers, 3));
+		}
+	}
+	&[disabled], &.disabled {
+		opacity: 0.15;
+		&:hover {
+			cursor: default;
+			color: $color;
+			background-color: $background-color;
+		}
+	}
+}
+
+%font {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.25rem;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	text-decoration: none;
+}
+
+%button {
+	position: relative;
+	display: inline-block;
+	margin: .25rem;
+	padding: $padding;
+	border: $border-width solid $background-color;
+	border-radius: $border-radius;
+	color: $color;
+	background-color: $background-color;
+	outline: none;
+	@extend %font;
+}
+
+.button {
+	@extend %button;
+	@include button-states($background-color);
+}
+
+.button--outline {
+	background-color: transparent;
+	color: $background-color;
+	@include button-states($background-color, $color, (0 20% 30%));
+	&[disabled], &.disabled {
+		&:hover {
+			color: $background-color;
+			background-color: transparent;
+		}
+	}
+}
+
+@each $color-name, $color-value in $primary-colors {
+	.button--#{$color-name} {
+		background: $color-value;
+		border-color: $color-value;
+		@include button-states($color-value);
+		&.button--outline {
+			background-color: transparent;
+			color: $color-value;
+			@include button-states($color-value, $color, (0 20% 30%));
+			&[disabled], &.disabled {
+				&:hover {
+					color: $color-value;
+					background-color: transparent;
+				}
+			}
+		}
+	}
+}

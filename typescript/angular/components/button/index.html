@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Angular Typescript Button Component Example</title>
+		<meta name="description" content="Angular Typescript Button Component Example">
+		<meta name="keywords" content="angular, typescript, component, button, example">
+		<link rel="author" href="https://github.com/leondejong" />
+		<link rel="stylesheet" type="text/css" href="../../node_modules/angular/angular-csp.css">
+		<link rel="stylesheet" type="text/css" href="src/button-style.css">
+	</head>
+	<body ng-app="ButtonModule">
+		<div class="main-container" ng-cloak ng-controller="MainController as main">
+			<section class="button-container">
+				<ui-button
+					name="button"
+					version="outline"
+					color="red"
+					procedure="main.procedure('data')"
+					info="main.info"
+					class="custom">
+						Button
+				</ui-button>
+				<ui-button
+					version="outline"
+					color="red"
+					disabled>
+						Button
+				</ui-button>
+			</section>
+		</div>
+		<script src="../../node_modules/angular/angular.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "name": "angular-javascript-examples",
+  "version": "0.0.1",
+  "description": "Angular Javascript Examples",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/leondejong/angular-examples.git"
+  },
+  "scripts": {
+  	"transpile-button-component": "gulp --gulpfile components/button/gulpfile.js",
+    "test-button-component": "karma start karma.conf.js"
+  },
+  "keywords": [
+    "angular",
+    "javascript",
+    "examples"
+  ],
+  "author": "Léon de Jong",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "angular": "^1.4.8"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.4.8",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-ng-annotate": "^1.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.1",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.15",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "phantomjs": "^1.9.19"
+  }
+}

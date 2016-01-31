@@ -1,0 +1,34 @@
+{
+  "name": "angular-typescript-examples",
+  "version": "0.0.1",
+  "description": "Angular Typescript Examples",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/leondejong/angular-examples.git"
+  },
+  "scripts": {
+  	"compile-button-component": "tsc --sourcemap --out components/button/app.js components/button/src/references.ts",
+  	"compile-button-test": "tsc --out components/button/button-unit-spec.js components/button/test/button-unit-spec.ts",
+    "test-button-component": "karma start karma.conf.js"
+  },
+  "keywords": [
+    "angular",
+    "typescript",
+    "examples"
+  ],
+  "author": "Léon de Jong",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "angular": "^1.4.8"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.4.8",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.15",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "phantomjs": "^1.9.19"
+  }
+}
